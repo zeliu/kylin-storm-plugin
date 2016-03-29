@@ -11,15 +11,15 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.apache.kylin:kylin-cube:1.1-incubating" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.kylin:kylin-metadata:1.1-incubating" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.kylin:kylin-common:1.1-incubating" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.kylin:kylin-cube:1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.kylin:kylin-metadata:1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.kylin:kylin-common:1.2" level="project" />
     <orderEntry type="library" name="Maven: org.reflections:reflections:0.9.9-RC1" level="project" />
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.16.1-GA" level="project" />
     <orderEntry type="library" name="Maven: dom4j:dom4j:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: xml-apis:xml-apis:1.0.b2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.kylin:kylin-dictionary:1.1-incubating" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.kylin:kylin-dictionary:1.2" level="project" />
     <orderEntry type="library" name="Maven: commons-cli:commons-cli:1.2" level="project" />
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
@@ -33,8 +33,8 @@
     <orderEntry type="library" name="Maven: com.ning:compress-lzf:1.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.roaringbitmap:RoaringBitmap:0.6.11" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.kylin:kylin-job:1.1-incubating" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.kylin:kylin-invertedindex:1.1-incubating" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.kylin:kylin-job:1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.kylin:kylin-invertedindex:1.2" level="project" />
     <orderEntry type="library" name="Maven: commons-daemon:commons-daemon:1.0.15" level="project" />
     <orderEntry type="library" name="Maven: org.apache.curator:curator-framework:2.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.curator:curator-client:2.6.0" level="project" />

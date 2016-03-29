@@ -137,16 +137,20 @@ public class RealTimeCubing {
     public void createPut(List<String> messages,List<Put> puts) throws IOException {
 
         List<Get> gets =new ArrayList<Get>();
+        //get all Cuboid
         List<StreamingData> streamingDatas=buildStreamingData(messages);
+        // aggregate input data
         Map<String,StreamingData> streamingDataMap=groupByRowkey(streamingDatas);
         streamingDatas.clear();
         for (Map.Entry<String,StreamingData> entry : streamingDataMap.entrySet()) {
             StreamingData streamingData =entry.getValue();
             streamingDatas.add(streamingData);
+            // generate hbase get
             Get get = new Get(streamingData.getRowkey());
             gets.add(get);
         }
 
+        // get values from hbase
         Result[] hbaseGet=hTable.get(gets);
 
         for(Result result:hbaseGet) {
@@ -167,10 +171,12 @@ public class RealTimeCubing {
         }
 
         streamingDataMap.clear();
+        // aggregate data(input +hbase get) again
         streamingDataMap=groupByRowkey(streamingDatas);
         for (Map.Entry<String,StreamingData> entry : streamingDataMap.entrySet()) {
             StreamingData streamingData = entry.getValue();
             buildValue(streamingData.getValues());
+            // put data to hbase
             Put put = getPut(streamingData.getRowkey(), hBaseColumnFamilyDescs, valueBuf);
             puts.add(put);
         }
