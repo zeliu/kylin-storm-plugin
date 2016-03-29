@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/src/main/java/org/apache/kylin/realtime/RealTimeCubing.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/apache/kylin/realtime/StreamingData.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/org/apache/kylin/realtime/test/RealtimeTest.java" charset="UTF-8" />
+  </component>
+</project>
