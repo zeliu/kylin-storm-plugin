@@ -1,16 +1,14 @@
 # kylin-storm-plugin
 
-        Example:
+   Example:
 
 
-        First, build a cube, and cancel all Field Dictionary (if you use multithreading , can put the thread ID as a dimension)
-
+   First, build a cube, and cancel all Field Dictionary (if you use multithreading , can put the thread ID as a dimension)
 
 
    public class TestBolt extends BaseBasicBolt {
     private RealTimeCubing realTimeCubing;
     private int thisTaskId;
-
 
     @Override
     public void prepare(Map stormConf, TopologyContext context) {
