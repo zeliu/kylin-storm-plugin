@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://E://kylin-storm-plugin/kylin-storm-plugin.iml" filepath="E://kylin-storm-plugin/kylin-storm-plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kylin-storm-plugin.iml" filepath="$PROJECT_DIR$/kylin-storm-plugin.iml" />
     </modules>
   </component>
 </project>
