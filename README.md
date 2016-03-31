@@ -7,22 +7,44 @@
 
 
 
+   public class TestBolt extends BaseBasicBolt {
+    private RealTimeCubing realTimeCubing;
+    private int thisTaskId;
+
+
+    @Override
+    public void prepare(Map stormConf, TopologyContext context) {
+        this.thisTaskId = context.getThisTaskId();
         Configuration conf = HBaseConfiguration.create();
-        HConnection connection = HConnectionManager.createConnection(conf);
-        //Hconnection   cubename   segment
-        RealTimeCubing realTimeCubing=new RealTimeCubing(connection,"realtimetest","20160301000000_20160331000000",",");
+        try {
+            HConnection connection = HConnectionManager.createConnection(conf);
+            //Hconnection   cubename   segment
+            this.realTimeCubing = new RealTimeCubing(connection, "kylin", "20160301000000_20160331000000", ",");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-        String message="1,2016-03-25,1000907,34,67.78";
-        List<String> data=new ArrayList<String>();
 
-        String d1="1,2016-03-26,1000907,100,456.78";
-        String d2="2,2016-03-26,1000964,123,123.78";
-        data.add(d1);
-        data.add(d2);
-        List<Put> puts=new ArrayList<Put>();
-        //for one message
-        //realTimeCubing.createPut(message,puts);
-        // for batch
-        realTimeCubing.createPut(data, puts);
-        realTimeCubing.commitPut(puts);
+    @Override
+    public void execute(Tuple tuple, BasicOutputCollector basicOutputCollector) {
+        String date = tuple.getStringByField(GatewayLogFlowScheme.FIELD_DATE);
+        String host = tuple.getStringByField(GatewayLogFlowScheme.FIELD_HOST);
+        String pv='1';
+        String message = date + ',' + host + ',' + thisTaskId + ","+pv;
+
+
+        List<String> data = new ArrayList<String>();
+        data.add(message);
+        List<Put> puts = new ArrayList<>();
+        try {
+            realTimeCubing.createPut(data, puts);
+            realTimeCubing.commitPut(puts);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+}
 
