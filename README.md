@@ -3,7 +3,8 @@
    Example:
 
 
-   First, build a cube, and cancel all Field Dictionary (if you use multithreading , can put the thread ID as a dimension)
+   First, build a cube, and cancel all Field Dictionary (if you use multithreading , can put the thread ID as a dimension
+   and make it Mandatory)
 
 
    public class TestBolt extends BaseBasicBolt {
